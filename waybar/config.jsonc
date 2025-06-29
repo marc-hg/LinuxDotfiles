@@ -16,15 +16,9 @@
     ],
     "modules-right": [
 //        "custom/weather",
-        "memory",
-        "cpu",
-        "temperature",
-        "network",
-        "pulseaudio",
+        "custom/system-load",
         "battery",
-        "power-profiles-daemon",
         "custom/keyboard",
-        "idle_inhibitor",
         "clock",
         "tray"
     ],
@@ -61,9 +55,9 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": "🕐 {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%H:%M}"
+        "format-alt": "{:%Y-%m-%d %H:%M}"
     },
     "cpu": {
         "format": "{usage}% 🖥️",
@@ -91,10 +85,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -125,8 +119,8 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} ",
+        "format": "",
+        "format-bluetooth": " ",
         "format-bluetooth-muted": " {icon}",
         "format-muted": " {icon}",
         "format-icons": {
@@ -144,6 +138,13 @@
         "format": "{}",
         "exec": "curl -s 'wttr.in/?format=%t+%c' | head -n1",
         "interval": 1800,
+        "tooltip": false
+    },
+    "custom/system-load": {
+        "format": "⚡ {}",
+        "return-type": "json",
+        "exec": "load=$(cat /proc/loadavg | cut -d' ' -f1); if (( $(echo \"$load < 0.5\" | bc -l) )); then class=\"low\"; elif (( $(echo \"$load < 1.0\" | bc -l) )); then class=\"medium\"; else class=\"high\"; fi; echo \"{\\\"text\\\":\\\"$load\\\",\\\"class\\\":\\\"$class\\\"}\"",
+        "interval": 5,
         "tooltip": false
     },
     "custom/keyboard": {

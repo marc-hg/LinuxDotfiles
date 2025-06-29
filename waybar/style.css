@@ -290,3 +290,16 @@ window#waybar.bottom #mode {
     padding-left: 16px;
 }
 
+/* System load colors */
+#custom-system-load.low {
+    color: @green;
+}
+
+#custom-system-load.medium {
+    color: @yellow;
+}
+
+#custom-system-load.high {
+    color: @red;
+}
+
