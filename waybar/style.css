@@ -3,13 +3,26 @@
     font-size: 13px;
 }
 
-@define-color inactive_module_color #a9a9a9;
+/* Gruvbox color palette */
+@define-color bg #282828;
+@define-color bg-alt #3c3836;
+@define-color fg #ebdbb2;
+@define-color fg-alt #a89984;
+@define-color red #cc241d;
+@define-color green #427b58;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color orange #d65d0e;
+
+@define-color inactive_module_color @fg-alt;
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.8);
-    border-color: rgba(100, 114, 125, 0.5);
+    background-color: @bg;
+    border-color: @bg-alt;
     border-style: solid;
-    color: #ffffff;
+    color: @fg;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -84,15 +97,16 @@ window#waybar #window {
 
 #workspaces button {
     background-color: transparent;
-    color: #ffffff;
+    color: @fg;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @bg-alt;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: @bg-alt;
+    color: #ffffff;
 }
 
 window#waybar:not(.bottom):not(.left):not(.right) #workspaces button.focused {
@@ -104,11 +118,13 @@ window#waybar.bottom #workspaces button.focused {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @red;
+    color: @fg;
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: @orange;
+    color: @bg;
 }
 
 window#waybar:not(.bottom):not(.left):not(.right) #mode {
@@ -125,18 +141,18 @@ window#waybar.bottom #mode {
 }
 
 #battery.charging, #battery.plugged {
-    color: #32cd32;
+    color: @green;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @fg;
+        color: @bg;
     }
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -160,7 +176,7 @@ window#waybar.bottom #mode {
 
 @keyframes needs-attention {
     to {
-        background-color: rgba(235, 77, 75, 0.5);
+        background-color: alpha(@red, 0.5);
     }
 }
 
@@ -190,7 +206,7 @@ window#waybar.bottom #mode {
 
 #cpu.high,
 #temperature.critical {
-    color: #eb4d4b;
+    color: @red;
 }
 
 #language {
@@ -206,11 +222,11 @@ window#waybar.bottom #mode {
 }
 
 #keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+    background: alpha(@bg, 0.8);
 }
 
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+    background: @bg-alt;
 }
 
 #scratchpad.empty {
@@ -222,48 +238,48 @@ window#waybar.bottom #mode {
  * Module colors
  */
 #cpu {
-    color: #2ecc71;
+    color: @green;
 }
 
 #memory {
-    color: #ba55d3;
+    color: @purple;
 }
 
 #disk {
-    color: #964B00;
+    color: @orange;
 }
 
 #backlight {
-    color: #90b1b1;
+    color: @aqua;
 }
 
 #network {
-    color: #00bfff;
+    color: @blue;
 }
 
 #pulseaudio,
 #wireplumber {
-    color: #f1c40f;
+    color: @yellow;
 }
 
 #temperature {
-    color: #f0932b;
+    color: @orange;
 }
 
 #mpd {
-    color: #66cc99;
+    color: @aqua;
 }
 
 #mpd.paused {
-    color: #51a37a;
+    color: @fg-alt;
 }
 
 #language {
-    color: #00b093;
+    color: @aqua;
 }
 
 #keyboard-state {
-    color: #97e1ad;
+    color: @green;
 }
 
 #custom-weather {

@@ -9,6 +9,25 @@ exec kanshi
 
 default_border pixel 1
 
+# Gruvbox color scheme
+set $bg #282828
+set $bg-alt #3c3836
+set $fg #ebdbb2
+set $fg-alt #a89984
+set $red #cc241d
+set $green #427b58
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d6a
+set $orange #d65d0e
+
+# Window borders
+client.focused          $bg-alt $bg-alt $fg $bg-alt $bg-alt
+client.focused_inactive $bg-alt $bg-alt $fg-alt $bg-alt $bg-alt
+client.unfocused        $bg $bg $fg-alt $bg $bg
+client.urgent           $red $red $fg $red $red
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
