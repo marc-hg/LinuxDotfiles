@@ -20,17 +20,13 @@
         "battery",
 //        "custom/keyboard",
         "clock",
-        "network"
+        //"network",
+        "tray"
     ],
     // Modules configuration
     "sway/window": {
         "format": "{}",
         "max-length": 50,
-        "align": "left",
-        "rewrite": {
-            "(.*) — Mozilla Firefox": "🌍 $1",
-            "(.*) - Visual Studio Code": "👨‍💻 $1"
-        }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -50,7 +46,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 5
     },
     "clock": {
@@ -143,7 +139,7 @@
     "custom/system-load": {
         "format": "⚡ {}",
         "return-type": "json",
-        "exec": "load=$(cat /proc/loadavg | cut -d' ' -f1); if (( $(echo \"$load < 0.5\" | bc -l) )); then class=\"low\"; elif (( $(echo \"$load < 1.0\" | bc -l) )); then class=\"medium\"; else class=\"high\"; fi; echo \"{\\\"text\\\":\\\"$load\\\",\\\"class\\\":\\\"$class\\\"}\"",
+        "exec": "load=$(cat /proc/loadavg | cut -d' ' -f1); if (( $(echo \"$load < 4.0\" | bc -l) )); then class=\"low\"; elif (( $(echo \"$load < 8.0\" | bc -l) )); then class=\"medium\"; else class=\"high\"; fi; echo \"{\\\"text\\\":\\\"$load\\\",\\\"class\\\":\\\"$class\\\"}\"",
         "interval": 5,
         "tooltip": false
     },

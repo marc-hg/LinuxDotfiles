@@ -8,6 +8,7 @@ exec syncthing
 exec kanshi
 
 default_border pixel 1
+smart_borders on
 
 # Gruvbox color scheme
 set $bg #282828
@@ -23,9 +24,9 @@ set $aqua #689d6a
 set $orange #d65d0e
 
 # Window borders
-client.focused          $bg-alt $bg-alt $fg $bg-alt $bg-alt
+client.focused          $orange $orange $fg $orange $orange
 client.focused_inactive $bg-alt $bg-alt $fg-alt $bg-alt $bg-alt
-client.unfocused        $bg $bg $fg-alt $bg $bg
+client.unfocused        $bg-alt $bg-alt $fg-alt $bg-alt $bg-alt
 client.urgent           $red $red $fg $red $red
 
 ### Variables
@@ -158,7 +159,7 @@ input * {
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -229,6 +230,8 @@ input * {
 
     # Right Alt + = switches to workspace 10
     bindsym $alt+equal workspace number 10
+    # Right Alt + - switches to workspace 9
+    bindsym $alt+minus workspace number 9
 
 #
 # Layout stuff:
