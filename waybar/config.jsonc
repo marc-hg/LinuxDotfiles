@@ -20,6 +20,7 @@
         "battery",
 //        "custom/keyboard",
         "clock",
+        "clock#indonesia",
         //"network",
         "tray"
     ],
@@ -54,6 +55,12 @@
         "format": "🕐 {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d %H:%M}"
+    },
+    "clock#indonesia": {
+        "timezone": "Asia/Jakarta",
+        "format": "🇮🇩 {:%H:%M}",
+        "tooltip-format": "<big>Indonesia Time</big>\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d %H:%M} WIB"
     },
     "cpu": {
         "format": "{usage}% 🖥️",

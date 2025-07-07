@@ -232,6 +232,10 @@ input * {
     bindsym $alt+equal workspace number 10
     # Right Alt + - switches to workspace 9
     bindsym $alt+minus workspace number 9
+    # Right Alt + 0 switches to workspace 8
+    bindsym $alt+0 workspace number 8
+    # Right Alt + Shift + 0 moves container to workspace 8
+    bindsym $alt+Shift+0 move container to workspace number 8
 
 #
 # Layout stuff:
