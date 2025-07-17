@@ -56,20 +56,23 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Start cliphist on launch
 exec wl-paste --watch cliphist -max-items 1000000 store
 
-# Workspace assignments
-assign [app_id="zen-alpha"] workspace number 3
-assign [class="Slack"] workspace number 4
-assign [class="discord"] workspace number 4
-assign [app_id="md.obsidian.Obsidian"] workspace number 10
+# # Workspace assignments
+# assign [app_id="zen-alpha"] workspace number 3
+# assign [class="Slack"] workspace number 4
+# assign [class="discord"] workspace number 4
+# assign [app_id="md.obsidian.Obsidian"] workspace number 10
+#
+# # Configure workspace 4 for tabbed layout
+# for_window [workspace="4"] layout tabbed
+#
+# # Autostart applications
+# exec flatpak run app.zen_browser.zen
+# exec flatpak run com.slack.Slack
+# exec flatpak run com.discordapp.Discord
+# exec flatpak run md.obsidian.Obsidian
 
-# Configure workspace 4 for tabbed layout
-for_window [workspace="4"] layout tabbed
-
-# Autostart applications
-exec flatpak run app.zen_browser.zen
-exec flatpak run com.slack.Slack
-exec flatpak run com.discordapp.Discord
-exec flatpak run md.obsidian.Obsidian
+# Window rules
+for_window [app_id="brave-browser" title="Meet -*"] floating enable
 
 
 
@@ -85,6 +88,8 @@ output * bg /home/ari/Pictures/universe.jpg fill
 # ---------------------------------------------
 # Region selection to clipboard (Mod+Shift+s)
 bindsym Mod4+Shift+s exec grimshot --notify copy area
+# Region selection to file (Ctrl+Mod+Shift+s)
+bindsym Ctrl+Mod4+Shift+s exec grimshot --notify save area ~/Pictures/Snippets/$(date +%Y-%m-%d_%H-%M-%S).png
 # Clipboard history with rofi (Mod+v)
 bindsym Mod4+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
