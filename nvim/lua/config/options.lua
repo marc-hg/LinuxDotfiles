@@ -10,3 +10,12 @@ vim.opt.expandtab = false
 vim.opt.tabstop = 1
 vim.opt.shiftwidth = 1
 vim.opt.softtabstop = 1
+
+-- Disable swap files
+vim.opt.swapfile = false
+
+-- LSP timeout settings for large files
+vim.g.lsp_timeout = 30000 -- 30 seconds timeout
+
+-- Load formatting configuration
+require("config.formatting")
