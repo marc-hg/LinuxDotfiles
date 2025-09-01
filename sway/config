@@ -83,6 +83,8 @@ for_window [app_id="brave-browser" title="Meet -*"] floating enable
 output * bg /home/ari/Pictures/universe.jpg fill
 
 # Monitor configuration handled by kanshi
+# High refresh rate gaming mode
+output DP-1 mode 1920x1080@120Hz
 
 # Shortcuts
 # ---------------------------------------------
@@ -93,9 +95,27 @@ bindsym Ctrl+Mod4+Shift+s exec grimshot --notify save area ~/Pictures/Snippets/$
 # Clipboard history with rofi (Mod+v)
 bindsym Mod4+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
+# Toggle all Sway keybindings (Mod+Shift+P)
+# Useful for streaming or when Sway shortcuts conflict with other apps
+bindsym $mod+Shift+p mode "passthrough"
+mode "passthrough" {
+    bindsym $mod+Shift+p mode "default"
+}
+
 # Switch keyboard layout (Ctrl+Mod+Space)
 #bindsym Ctrl+Alt+space exec swaymsg input type:keyboard xkb_switch_layout next
 
+# Touchpad gestures
+# Three-finger gestures for workspace switching
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
+# bindgesture swipe:3:up exec $menu
+bindgesture swipe:3:up layout tabbed
+bindgesture swipe:3:down layout toggle split
+
+# Two-finger gestures for window focus
+bindgesture swipe:4:left focus left
+bindgesture swipe:4:right focus right
 
 # --------------------------
 
@@ -168,6 +188,9 @@ input * {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Open file manager (Thunar)
+    bindsym $mod+n exec thunar
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
