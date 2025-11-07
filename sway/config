@@ -4,11 +4,13 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-exec syncthing
 exec kanshi
 
 default_border pixel 1
 smart_borders on
+
+# Font
+font pango:Comic Code Ligatures 10
 
 # Gruvbox color scheme
 set $bg #282828
@@ -94,6 +96,8 @@ bindsym Mod4+Shift+s exec grimshot --notify copy area
 bindsym Ctrl+Mod4+Shift+s exec grimshot --notify save area ~/Pictures/Snippets/$(date +%Y-%m-%d_%H-%M-%S).png
 # Clipboard history with rofi (Mod+v)
 bindsym Mod4+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+# Toggle display on/off (Mod+Shift+o)
+bindsym Mod4+Shift+o exec swaymsg output eDP-1 dpms toggle
 
 # Toggle all Sway keybindings (Mod+Shift+P)
 # Useful for streaming or when Sway shortcuts conflict with other apps
