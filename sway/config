@@ -134,7 +134,7 @@ input * {
     xkb_variant "altgr-intl"
     xkb_options "caps:escape,altwin:swap_lalt_lwin"
     repeat_delay 200
-    repeat_rate 35
+    repeat_rate 50
 }
 
 # Option 2: Use setxkbmap as a workaround (run as a startup command)
