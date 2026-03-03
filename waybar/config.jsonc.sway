@@ -7,34 +7,43 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "niri/workspaces"
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad"
     ],
     "modules-center": [
-        "niri/window"
+        "sway/window"
     ],
     "modules-right": [
 //        "custom/weather",
         "custom/system-load",
         "battery",
+//        "custom/keyboard",
         "clock",
         "clock#indonesia",
         //"network",
         "tray"
     ],
     // Modules configuration
-    "niri/window": {
+    "sway/window": {
         "format": "{}",
         "max-length": 50,
     },
-    "niri/workspaces": {
-        "format": "{name}",
-        "sort-by-number": true,
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         }
     },
     "tray": {
@@ -66,7 +75,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -86,7 +95,7 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -96,10 +105,10 @@
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
       }
     },
     "network": {
@@ -114,17 +123,17 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "",
-        "format-bluetooth": " ",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": " {icon}",
+        "format-bluetooth": " ",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " {icon}",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
@@ -139,6 +148,13 @@
         "return-type": "json",
         "exec": "load=$(cat /proc/loadavg | cut -d' ' -f1); if (( $(echo \"$load < 4.0\" | bc -l) )); then class=\"low\"; elif (( $(echo \"$load < 8.0\" | bc -l) )); then class=\"medium\"; else class=\"high\"; fi; echo \"{\\\"text\\\":\\\"$load\\\",\\\"class\\\":\\\"$class\\\"}\"",
         "interval": 5,
+        "tooltip": false
+    },
+    "custom/keyboard": {
+        "format": "⌨️ {}",
+        "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type==\"keyboard\") | .xkb_active_layout_name' | head -1 | sed 's/English (US, intl., with dead keys)/INT/' | sed 's/English (US)/US/'",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+        "interval": 1,
         "tooltip": false
     }
 }
