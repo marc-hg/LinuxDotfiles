@@ -1,2 +1,0 @@
-...lar/neovim/0.11.2/share/nvim/runtime/lua/vim/lsp/rpc.lua:660: cmd: expected table, got nil
-
