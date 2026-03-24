@@ -81,12 +81,12 @@
         },
         "format": "{icon} {capacity}%",
         "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -135,7 +135,7 @@
         "tooltip": false
     },
     "custom/system-load": {
-        "format": "⚡ {}",
+        "format": "󰍛 {}",
         "return-type": "json",
         "exec": "load=$(cat /proc/loadavg | cut -d' ' -f1); if (( $(echo \"$load < 4.0\" | bc -l) )); then class=\"low\"; elif (( $(echo \"$load < 8.0\" | bc -l) )); then class=\"medium\"; else class=\"high\"; fi; echo \"{\\\"text\\\":\\\"$load\\\",\\\"class\\\":\\\"$class\\\"}\"",
         "interval": 5,
