@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(komorebic.exe query:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

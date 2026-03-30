@@ -1,0 +1,196 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.40/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
+  "border": true,
+  "border_width": 3,
+  "border_offset": -1,
+  "window_effects": {
+    "shadow": false
+  },
+  "theme": {
+    "palette": "Base16",
+    "name": "GruvboxDarkHard",
+    "accent": "Base0D"
+  },
+  "global_work_area_offset": {
+    "top": 0,
+    "left": 0,
+    "right": 0,
+    "bottom": 0
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          },
+          "workspace_rules": []
+        },
+        {
+          "name": "II",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          }
+        },
+        {
+          "name": "III",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          }
+        },
+        {
+          "name": "IV",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          },
+          "workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Discord.exe",
+              "matching_strategy": "Equals"
+            }
+          ]
+        },
+        {
+          "name": "V",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          },
+          "workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "steam.exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "kind": "Exe",
+              "id": "steamwebhelper.exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "kind": "Exe",
+              "id": "VRChat.exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "kind": "Exe",
+              "id": "Wow.exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "kind": "Exe",
+              "id": "vrwebhelper.exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "kind": "Exe",
+              "id": "VRCFaceTracking.exe",
+              "matching_strategy": "Equals"
+            }
+          ]
+        },
+        {
+          "name": "VI",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          }
+        },
+        {
+          "name": "VII",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          }
+        },
+        {
+          "name": "VIII",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          }
+        },
+        {
+          "name": "IX",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          },
+          "workspace_rules": [
+            {
+              "kind": "Title",
+              "id": "Google Gemini",
+              "matching_strategy": "Equals"
+            }
+          ]
+        },
+        {
+          "name": "X",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2,
+              "center_focused_column": true
+            }
+          },
+          "workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Obsidian.exe",
+              "matching_strategy": "Equals"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stackbar": {
+    "height": 40,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300,
+      "focused_text": "#00a542",
+      "unfocused_text": "#b3b3b3",
+      "background": "#141414"
+    }
+  }
+}
+

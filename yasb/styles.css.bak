@@ -1,0 +1,291 @@
+
+* {
+	font-size: 12px;
+	color: #ebdbb2;
+	font-weight: 500;
+	font-family: "ComicCodeLigatures Nerd Font";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0;
+	margin: 0;
+}
+.widget {
+	background-color: #282828;
+	padding: 0 8px;
+	margin: 0;
+}
+.widget .label {
+	padding: 1px 2px 1px 2px;
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+.active-window-widget {
+	border-radius: 18px;
+	margin-left: 8px
+}
+.container-left,
+.container-center,
+.container-right {
+	margin: 0;
+	padding: 0;
+}
+
+.clock-widget {
+	border-top-left-radius: 18px;
+	border-bottom-left-radius: 18px;
+}
+
+.apps-widget {
+	padding: 0 2px;
+	border-top-right-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+.komorebi-active-layout {
+	border-top-right-radius: 18px;
+	border-bottom-right-radius: 18px;
+	padding: 0 4px 0 0;
+}
+
+.komorebi-active-layout .label {
+	font-weight: 600;
+	padding: 2px 0 0 0;
+}
+.wifi-widget {
+	padding: 0 4px 0 4px;
+	border-top-left-radius: 18px;
+	border-bottom-left-radius: 18px;
+}
+
+.apps-widget .widget-container,
+.komorebi-workspaces .widget-container,
+.wifi-widget .widget-container,
+.komorebi-active-layout .widget-container {
+	background-color: #3c3836;
+	margin: 4px 0px 4px 0;
+	border-radius: 14px;
+				background-color: #282828; /* Gruvbox Bg0 (Hard) */
+    margin: 4px 0px 4px 0;
+    border-radius: 14px;
+    border: 1px solid #3c3836; /* Subtle border for depth */
+}
+.apps-widget .widget-container {
+    margin-right: 2px;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 16px;
+    background-color: transparent;
+	margin: 0 4px 0 4px;
+	color: #928374;
+    border: none;
+}
+.komorebi-workspaces .ws-btn.populated {
+	color: #d3869b;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #83a598;
+    background-color: transparent;
+}
+.komorebi-workspaces .float-override {
+    color: #b8bb26;
+    font-size: 14px;
+    padding: 0 0 0 8px;
+}
+.apps-widget .label {
+	font-size: 14px;
+	padding: 0 2px;
+}
+.apps-widget .label:hover {
+	color: #fbf1c7;
+}
+/*POWER MENU WIDGET*/
+/* Uptime text */
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #fbf1c7;
+	font-family: "Comic Code Ligatures Regular";
+}
+.power-menu-widget .label {
+	color: #fb4934;
+	font-size: 13px;
+}
+.power-menu-popup {
+	background-color: rgba(40, 40, 40, 0.9);
+	border-radius: 12px;
+	border: 4px solid #3c3836;
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 240px;
+	height: 120px;
+	border-radius: 8px;
+	background-color: #3c3836;
+	font-family: "Comic Code Ligatures Regular";
+	color: white;
+	border: 1px solid rgba(251, 241, 199, 0.1);
+	margin: 8px;
+}
+.power-menu-popup .button.hover {
+	background-color: #504945;
+	border: 1px solid #504945;
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(251, 241, 199, 0.95);
+	font-family: "Comic Code Ligatures Regular";
+}
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	padding-top: 8px;
+	color: rgba(251, 241, 199, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(251, 73, 52, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(251, 73, 52, 0.95);
+}
+.power-menu-popup .button.shutdown .icon {
+	color: rgba(131, 165, 152, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+	color: rgba(131, 165, 152, 0.95);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: #83a598;
+	margin: 1px 2px 0 0;
+}
+.cpu-widget .icon,
+.memory-widget .icon {
+	font-size: 14px;
+	color: #d3869b;
+	margin: 0 2px 1px 0;
+}
+.memory-widget .icon {
+	color: #8ec07c;
+}
+.wifi-widget .icon {
+	color: #8ec07c;
+	padding: 0 7px;
+	margin: 0;
+}
+
+/* Memory widget usage colors. Uncomment if you want to color of the battery widget icon to change based on status */
+
+/*
+.memory-widget.status-low .icon {
+  color: #b8bb26;
+}
+.memory-widget.status-medium .icon {
+  color: #fabd2f;
+}
+.memory-widget.status-high .icon {
+  color: #fe8019;
+}
+.memory-widget.status-critical .icon {
+  color: #fb4934;
+}
+*/
+
+/* Battery widget value colors. Uncomment if you want to color of the battery widget icon to change based on status */
+
+/*
+.battery-widget.status-charging .icon {
+  color: #8ec07c;
+}
+.battery-widget.status-full .icon {
+  color: #8ec07c;
+}
+.battery-widget.status-high .icon {
+  color: #b8bb26;
+}
+.battery-widget.status-medium .icon {
+  color: #fabd2f;
+}
+.battery-widget.status-low .icon {
+  color: #fe8019;
+}
+.battery-widget.status-critical .icon {
+  color: #fb4934;
+}
+*/
+
+/* WEATHER WIDGET */
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 1px 0;
+}
+.weather-widget .icon.sunnyDay {
+	color: #fabd2f;
+}
+.weather-widget .icon.clearNight {
+	color: #83a598;
+	font-size: 22px;
+	margin: 1px 2px 0px 0;
+}
+/* 
+.weather-widget .icon.cloudyDay {}
+.weather-widget .icon.cloudyNight {} 
+.weather-widget .icon.rainyDay {} 
+.weather-widget .icon.rainyNight {} 
+.weather-widget .icon.snowyDay {} 
+.weather-widget .icon.snowyNight {} 
+.weather-widget .icon.blizzardDay {} 
+.weather-widget .icon.default {}
+*/
+
+/* MEDIA WIDGET */
+.media-widget {
+	padding: 0;
+	padding-left: 2px;
+	margin: 0;
+	border-radius: 16px;
+	margin-right: 8px;
+}
+.media-widget .label {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+.media-widget .btn {
+	color: #928374;
+	padding: 0 3px;
+	margin: 4px 0;
+	font-family: Segoe Fluent Icons;
+}
+.media-widget .btn:hover {
+	color: #83a598;
+}
+.media-widget .btn.play {
+	background-color: #3c3836;
+	border-radius: 14px;
+	font-size: 16px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: #665c54;
+	font-size: 12px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* GITHUB WIDGET */
+.github-widget {
+    padding:0 4px;
+}
+.github-widget .icon {
+    font-size: 14px;
+	color: #ebdbb2
+}
+.github-widget .icon.new-notification {
+    color: #fb4934;
+}

@@ -1,0 +1,311 @@
+/* ==========================================================================
+   YASB GRUVBOX DARK HARD - FULL STYLESHEET
+   ========================================================================== */
+
+/* --- GLOBAL STYLES --- */
+* {
+    font-size: 12px;
+    color: #ebdbb2; /* Gruvbox Foreground */
+    font-weight: 500;
+    font-family: "ComicCodeLigatures Nerd Font";
+    margin: 0;
+    padding: 0;
+}
+
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+}
+
+.widget {
+    background-color: #1d2021; /* Gruvbox Bg0_H (Darkest - Main Bar Background) */
+    padding: 0 8px;
+    margin: 0;
+}
+
+.widget .label {
+    padding: 1px 2px 1px 2px;
+}
+
+.widget .label.alt {
+    padding: 1px 8px 1px 8px;
+}
+
+.icon { 
+    font-size: 16px; 
+}
+
+
+/* ==========================================================================
+   SHARED "PILL" CONTAINER STYLES (Used by most standalone widgets)
+   ========================================================================== */
+.clock-widget .widget-container,
+.apps-widget .widget-container,
+.weather-widget .widget-container,
+.cpu-widget .widget-container,
+.memory-widget .widget-container,
+.volume-widget .widget-container,
+.power-menu-widget .widget-container,
+.disk-widget,
+.system-widget .widget-container {
+    background-color: #282828; /* Gruvbox Bg0 */
+    border-radius: 14px;
+    border: 1px solid #3c3836;
+    margin: 4px 3px; 
+    padding: 0 10px;
+}
+
+/* Clear default padding/clipping for these standalone pills */
+.clock-widget,
+.apps-widget,
+.weather-widget,
+.cpu-widget,
+.memory-widget,
+.volume-widget,
+.power-menu-widget,
+.system-widget {
+    padding: 0;
+    border-radius: 0;
+}
+
+
+/* ==========================================================================
+   LEFT SIDE WIDGETS
+   ========================================================================== */
+
+/* 1. WINDOWS START BUTTON */
+.system-widget .widget-container {
+    margin: 4px 4px 4px 8px; /* Extra left margin to push it off the screen edge */
+}
+.system-widget .label {
+    color: #fabd2f; /* Gruvbox Yellow */
+    font-size: 16px;
+}
+
+/* 2. KOMOREBI WORKSPACES */
+.komorebi-workspaces .ws-btn {
+    font-size: 16px;
+    background-color: transparent;
+    margin: 0 4px;
+    color: #b8bb26; /* Unactive/Default: Gruvbox Green */
+    border: none;
+    opacity: 0.6; /* Faded for unactive workspaces */
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    color: #b8bb26;
+    opacity: 1.0; /* Full brightness for populated */
+}
+
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.active {
+    color: #fabd2f; /* Active/Focused: Gruvbox Yellow */
+    background-color: transparent;
+    font-weight: 800;
+    opacity: 1.0;
+}
+
+.komorebi-workspaces .float-override {
+    color: #83a598; /* Floating indicator: Aqua */
+    font-size: 14px;
+    padding: 0 0 0 8px;
+}
+
+/* 3. KOMOREBI ACTIVE LAYOUT (BSP) */
+.komorebi-active-layout {
+    padding: 0;
+    border-radius: 0; 
+}
+.komorebi-active-layout .widget-container {
+    background-color: #282828;
+    border-radius: 14px; 
+    border: 1px solid #3c3836;
+    margin: 4px 4px; 
+    padding: 0 12px; 
+}
+.komorebi-active-layout .label {
+    font-weight: 700;
+    color: #b8bb26; /* Gruvbox Green */
+    padding: 0;
+}
+
+/* 4. TASKBAR (APP ICONS) */
+.taskbar-widget {
+    background-color: #282828;
+    margin: 4px 0px 4px 8px; 
+    border-radius: 14px;
+    border: 1px solid #3c3836;
+    padding: 0 4px;
+}
+
+.taskbar-widget .app-container {
+    margin: 0 4px;
+    padding: 0 4px;
+}
+
+.taskbar-widget .app-container.running {
+    opacity: 0.6; /* Open but not focused */
+}
+
+.taskbar-widget .app-container.foreground {
+    opacity: 1.0; /* Currently focused */
+    border-bottom: 2px solid #fabd2f; /* Yellow active indicator line */
+}
+
+
+/* ==========================================================================
+   CENTER WIDGETS
+   ========================================================================== */
+
+/* WEATHER */
+.weather-widget .icon {
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   RIGHT SIDE WIDGETS
+   ========================================================================== */
+
+/* MEDIA WIDGET */
+.media-widget {
+    background-color: #282828;
+    border: 1px solid #3c3836;
+    border-radius: 14px;
+    margin: 4px 8px; 
+    padding: 0 8px;
+}
+
+/* Forces the grey box behind the text to disappear */
+.media-widget .label,
+.media-widget .text-container, 
+.media-widget .label-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #ebdbb2; 
+    padding-left: 6px; 
+}
+
+.media-widget .btn {
+    color: #928374; 
+    padding: 0 4px;
+    margin: 4px 0;
+    font-size: 14px;
+}
+.media-widget .btn:hover {
+    color: #fabd2f; 
+}
+.media-widget .btn.play {
+    color: #b8bb26; 
+    background-color: transparent;
+}
+
+/* SYSTEM STATS ICONS SPACER */
+.cpu-widget .icon,
+.memory-widget .icon,
+.volume-widget .icon {
+    margin-right: 4px; 
+}
+
+/* SYSTEM ICONS COLORS */
+.cpu-widget .icon { color: #d3869b; }     /* Purple */
+.memory-widget .icon { color: #8ec07c; }  /* Aqua/Green */
+.volume-widget .icon { color: #83a598; }  /* Blue */
+
+/* NOTIFICATIONS WIDGET (APPS) */
+.apps-widget .label {
+    font-size: 16px;
+    padding: 0 6px; 
+    color: #a89984; 
+}
+.apps-widget .label:hover {
+    color: #fabd2f; 
+}
+
+/* POWER BUTTON */
+.power-menu-widget .label {
+    color: #fb4934; /* Gruvbox Red */
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+
+/* ==========================================================================
+   THE MEGA INTERNET PILL (Wi-Fi + IP + Traffic)
+   ========================================================================== */
+
+/* 1. Strip default spacing */
+.wifi-widget, 
+.ip-info-widget, 
+.traffic-widget {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* 2. Left Section (Wi-Fi) */
+.wifi-widget .widget-container {
+    background-color: #282828;
+    border: 1px solid #3c3836;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none; 
+    margin: 4px 0 4px 3px; 
+    padding: 0 8px 0 10px;
+}
+
+/* 3. Middle Section (IP Info) */
+.ip-info-widget .widget-container {
+    background-color: #282828;
+    border: 1px solid #3c3836;
+    border-radius: 0; 
+    border-right: none;
+    border-left: 1px solid #504945; /* Lighter Gruvbox divider line */
+    margin: 4px 0; 
+    padding: 0 8px;
+}
+
+/* 4. Right Section (Traffic) */
+.traffic-widget .widget-container {
+    background-color: #282828;
+    border: 1px solid #3c3836;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid #504945; /* Lighter Gruvbox divider line */
+    margin: 4px 3px 4px 0;
+    padding: 0 10px 0 8px;
+}
+
+/* Mega Pill Icon Colors */
+.wifi-widget .label { color: #8ec07c; } /* Green */
+.ip-info-widget .label { color: #83a598; } /* Aqua */
+.traffic-widget .label { color: #d3869b; } /* Purple */
+
+
+/* ==========================================================================
+   POPUP MENUS
+   ========================================================================== */
+
+/* POWER MENU POPUP */
+.uptime {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #fbf1c7;
+}
+.power-menu-popup {
+    background-color: rgba(29, 32, 33, 0.95);
+    border-radius: 12px;
+    border: 2px solid #504945;
+}
+.power-menu-popup .button {
+    background-color: #3c3836;
+    color: #ebdbb2;
+    border: 1px solid rgba(251, 241, 199, 0.1);
+    margin: 8px;
+}
+.power-menu-popup .button.hover {
+    background-color: #504945;
+}
